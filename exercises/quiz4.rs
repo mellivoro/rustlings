@@ -5,12 +5,20 @@
 
 // Write a macro that passes the quiz! No hints this time, you can do it!
 
-// I AM NOT DONE
+
 
 #[cfg(test)]
+#[macro_export]
+macro_rules!  my_macro{
+    ($val:expr) => {
+
+        format!("Hello {}",$val);//println! &str error
+        
+    };
+}
 mod tests {
     use super::*;
-
+   
     #[test]
     fn test_my_macro_world() {
         assert_eq!(my_macro!("world!"), "Hello world!");
@@ -21,3 +29,5 @@ mod tests {
         assert_eq!(my_macro!("goodbye!"), "Hello goodbye!");
     }
 }
+
+
